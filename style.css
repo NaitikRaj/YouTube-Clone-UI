@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    background-origin: padding-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(14,14,15);
+    color: #fff;
+}
+
+a {
+    pointer-events: auto; /* Ensure links are clickable */
+}
+
+.navigation{
+    width: 100vw;
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-color: rgb(14,14,15);
+    z-index: 10;
+}
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    
+    .youtube{
+        height: 1.3rem;
+        width: 2rem;
+        padding-left: 20px;
+        }
+    .menu-icon{
+        height: 1.5rem;
+        width: 1.7rem; 
+    }
+    &>p{
+        font-family: "Oswald", sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 1px;
+        margin-left: 2px;
+        font-weight: 500;
+        &>sup{
+           color: #fefefed5;
+            font-weight: 300;
+            font-size: 0.6rem;
+            
+        }
+    }
+    }
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &>input{
+        width: 550px;
+        border-radius: 50px 0 0 50px;
+        padding: 7px;
+        margin-left: 10px;
+        color: #fff;
+        border: 1px solid #333;
+        background-color: rgb(18,19,19);
+        outline: none;
+        font-size: 1.2rem;
+       
+    }
+    &>:focus{
+        border-color: rgb(68, 68, 234);
+    }
+    &>input::placeholder{
+        color: #9d999980;
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+    .search-icon{
+        height: 25px;
+        width: 3rem;
+        border-radius: 0 50px 50px 0;
+        background-color: rgb(34,34,34);
+        padding: 6px;
+        border: 1px solid #333;
+        cursor: pointer;
+    }
+    .mic{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        padding: 8px;
+        background-color: #333;
+        border: 1px solid #333;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+}
+.upload{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-right: 40px;
+    }
+}
+.left-navigation{
+    width: 15%;
+    position: fixed;
+    background-color: #0b0b0b;
+    top: 70px;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    overflow-y: scroll;
+    ul{
+        width: 90%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        margin-left: 10px;
+        &>li{
+            height: 30px;
+            padding:5px 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+            border-radius: 10px;
+            &>img{
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                padding: 2px;
+            }
+            
+            
+        }
+        hr{
+            width: 90%;
+            border: 1px solid #333;
+        }
+        h1{
+            font-size: 16px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        li:first-child{
+            border: 1px solid #333;
+            background-color: #333;
+            
+        }
+        li:hover{
+            background-color: #444;
+            cursor: pointer;
+        }
+    }
+}
+.left-navigation::-webkit-scrollbar{
+    width: 5px;
+}
+.left-navigation::-webkit-scrollbar-track{
+    background-color: #333;
+    border-radius: 50px;
+}
+.left-navigation::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 50px;
+}
+main{
+    display: flex;
+}
+/* Top-line navigation */
+.top-line {
+    position: fixed;
+    top: 60px; /* Space from the top of the viewport */
+    left: 250px; /* Align from the left edge, after the left navigation */
+    right: 0; /* Stretch to the right edge */
+    width: calc(100% - 250px); /* Full width minus left nav width */
+    z-index: 20; /* Stay above other elements */
+    background-color: rgb(14, 14, 15); /* Background for the nav */
+    overflow-x: auto; /* Horizontal scrolling when content exceeds width */
+    padding: 5px 0;
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+}
+
+.top-line ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 5px 10px;
+    background-color: rgb(14, 14, 15); /* Background color */
+    justify-content: flex-start; /* Align items to the left */
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.top-line li { 
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.top-line li:first-child {
+    background-color: #fff;
+    color: #333;
+}
+
+.top-line li:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* WebKit scrollbar styles */
+.top-line::-webkit-scrollbar {
+    height: 2px; /* Increased height for better visibility */
+}
+
+.top-line::-webkit-scrollbar-track {
+    background-color: #333; /* Track background color */
+    border-radius: 50px; /* Rounded corners for the track */
+}
+
+.top-line::-webkit-scrollbar-thumb {
+    background-color: rgba(215, 35, 35, 0.511); /* Thumb color */
+    border-radius: 25px; /* Rounded corners for the thumb */
+}
+
+/* Left navigation */
+.left-nav {
+    position: fixed;
+    top: 60px; /* Avoid overlap with top-line navigation */
+    left: 0;
+    width: 200px;
+    height: calc(100vh - 60px); /* Full height minus top-line navigation */
+    background-color: #222;
+    padding: 10px 15px;
+    overflow-y: auto;
+    z-index: 10; /* Stay below the top-line navigation */
+    padding-left: 10px; /* Additional padding */
+}
+
+.left-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-nav li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.left-nav li:hover {
+    background-color: #333;
+    color: #ddd;
+}
+
+/* Responsive Design for Screens up to 1460px */
+@media (max-width: 1460px) {
+    .top-line {
+        left: 180px; /* Adjust left padding */
+        width: calc(100% - 180px); /* Adjust width */
+    }
+
+    .left-nav {
+        width: 180px; /* Adjust width for smaller screens */
+    }
+
+    .top-line ul {
+        gap: 10px; /* Reduce gap between list items */
+    }
+
+    .top-line li {
+        font-size: 13px; /* Slightly smaller font for list items */
+        padding: 8px; /* Adjust padding */
+    }
+
+    .left-nav li {
+        font-size: 14px; /* Smaller font in left nav */
+    }
+}
+
+/* Responsive Design for Screens below 480px */
+@media (max-width: 480px) {
+    .left-nav {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Adjust height based on content */
+        padding: 10px;
+        position: static; /* Make static for mobile */
+        overflow: visible;
+    }
+
+    .top-line {
+        left: 0; /* No padding for mobile */
+        width: 100%; /* Full width */
+    }
+
+    .left-nav li {
+        font-size: 14px; /* Smaller font for mobile */
+        margin-bottom: 10px;
+    }
+}
+
+.video-container{
+    position: relative;
+    top: 120px;
+    left: 15%;
+    /* z-index: -2; */
+    display: flex;
+    padding: 5px 20px;
+    flex-direction: column;
+    gap: 20px;
+    a.video{
+        text-decoration: none;
+        position: relative;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 280px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        .thumbnail{
+            height: 170px;
+            width: 280px;
+            border-radius: 10px;
+        }
+        .item{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 10px;
+            padding: 5px;
+            h3{
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 5px;
+                margin-left: 5px;
+            }
+            p{  
+                color: #ffffff6d;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+            .name{
+                color: #ffffff6d;
+                font-size: 14px;
+                margin-left: 5px;
+                
+            }
+            .name:hover{
+                
+                color: #fff;
+            }
+            .logo{
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                padding: 2px;
+            }
+        }
+    }
+}
+.videos{
+    display: flex;
+    gap: 25px;
+}
+.video-container{
+    display: flex;
+    flex-direction: column;
+}
+.shorts{
+    display: flex;
+    gap: 8px;
+    margin: 20px 0;
+
+    height: 450px ;
+    /* z-index: -1; */
+    .short-video{
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 420px;
+        border-radius: 10px;
+        margin: 10px;
+        cursor: pointer;
+        
+        img{
+            width: 100%;
+            height: 80%;
+            border-radius: 10px;
+        }        
+}
+}
+a.short-video{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    .item-short{
+        display: flex;
+        align-items: start;
+        margin-top: 10px;
+        &>div>img{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            padding: 2px;
+        }
+        &>div>p{
+            color: #ffffff6d;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #333;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 50px;
+}
